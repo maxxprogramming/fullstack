@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 public class Alumnos {
 
-	
 		public String alumnos[] = {"al1","al2","al3"};
 		
 	
@@ -15,13 +14,9 @@ public class Alumnos {
 	        return newArray;
 	    }
 
-
-
 	public String[] getAlumnos() {
 		return alumnos;
 	}
-
-
 
 	public void setAlumnos(String[] alumnos) {
 		this.alumnos = alumnos;
