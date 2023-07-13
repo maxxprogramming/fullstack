@@ -22,12 +22,7 @@ public class Alumnos {
 		this.alumnos = alumnos;
 	}
 	 
-	 
-	public void deleteAlumno(String [] alumnos) { 
-		
-		
 	
-	}
 	
 
 }
