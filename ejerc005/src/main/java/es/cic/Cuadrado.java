@@ -1,10 +1,12 @@
 package es.cic;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Cuadrado implements FigurasI {
 	 
-	 
+    private static List<Cuadrado> existingFigures = new ArrayList<>();
+
 	 
 	int coordX;
 	int coordY;
@@ -16,31 +18,29 @@ public class Cuadrado implements FigurasI {
 	
 	
 
-	public Cuadrado(String typeFigure, String color, int coordX, int coordY,  int sizeFigureX, int sizeFigureY) {
-		// TODO Auto-generated constructor stub
-		this.coordX = coordX;
-		this.coordY = coordY;
-		this.typeFigure = typeFigure;
-		this.color = color;
-		this.sizeFigureX = sizeFigureX;
-		this.sizeFigureY = sizeFigureY;
-		
-		
-	}
+	 public Cuadrado() {
+        super ();
+    }
 
 	
 
 
 
 
-	@Override
-	public void addFigure() {
-		// TODO Auto-generated method stub
-		
-		
-	}
 
 	
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -175,5 +175,74 @@ public class Cuadrado implements FigurasI {
 
 
 
+	@Override
+	public void deleteFigure(String arrayName, int indexOfFigure) {
+		// TODO Auto-generated method stub
+		
+	}
 
-}
+
+
+
+
+
+	@Override
+	public void moveFigure(String arrayName, int indexOfFigure, int coordX, int coordY) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+
+
+	@Override
+	public void transformFigure(String arrayName, int indexOfFigure, int sizeFigureX, int sizeFigureY, int radius) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+
+
+	@Override
+	public void addFigure(int coordX, int coordY, String typeFigure, String color, int sizeFigureX, int sizeFigureY,
+			int radius) {
+		
+		
+		
+		
+		 boolean coordXExists = false;
+
+	      
+	        for (Cuadrado existingFigure : existingFigures) {
+	            if (existingFigure.coordX == this.coordX && existingFigure.coordY == this.coordY || this.coordX > Lienzo.getCoordXLienzo() || this.coordX > Lienzo.getCoordYLienzo()) {
+	                coordXExists = true;
+	                break;
+	            } 
+	        }
+
+	      
+	        if (!coordXExists) {
+	            existingFigures.add(this);
+	            System.out.println(existingFigures.toString());
+	            Lienzo.setDraws(this.toString());
+	            System.out.println("Figure added successfully." + Lienzo.getDraws() + existingFigures);
+	            System.out.println(Lienzo.getCoordYLienzo());
+	        } else {
+	            System.out.println("A figure with the same coordX already exists. Figure not added.");
+	        }
+	    }
+		
+	}
+
+
+
+
+
+
+
+
